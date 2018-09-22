@@ -27,18 +27,13 @@ namespace LiveSplit.UI.Components
         private RegularSumOfBestTimeFormatter Formatter { get; set; }
 
         public IDictionary<string, Action> ContextMenuControls => null;
+
+        private string previousOverrideText { get; set; }
         
         public SumOfBestComponent(LiveSplitState state)
         {
             Formatter = new RegularSumOfBestTimeFormatter();
-            InternalComponent = new InfoTimeComponent("Sum of Best Segments", null, Formatter)
-            {
-                AlternateNameText = new string[]
-                {
-                    "Sum of Best",
-                    "SoB"
-                }
-            };
+            InternalComponent = new InfoTimeComponent("Sum of Best Segments", null, Formatter);
             Settings = new SumOfBestSettings();
             state.OnSplit += state_OnSplit;
             state.OnUndoSplit += state_OnUndoSplit;
@@ -170,6 +165,25 @@ namespace LiveSplit.UI.Components
         {
             if (CheckIfRunChanged(state))
                 UpdateSumOfBestValue(state);
+
+            if (Settings.OverrideText != previousOverrideText)
+            {
+                string name = "Sum of Best Segments";
+                if (!string.IsNullOrEmpty(Settings.OverrideText))
+                {
+                    name = Settings.OverrideText;
+                }
+                InternalComponent.InformationName = InternalComponent.LongestString = name;
+
+                InternalComponent.AlternateNameText.Clear();
+                if (string.IsNullOrEmpty(Settings.OverrideText))
+                {
+                    InternalComponent.AlternateNameText.Add("Sum of Best");
+                    InternalComponent.AlternateNameText.Add("SoB");
+                }
+
+                previousOverrideText = Settings.OverrideText;
+            }
 
             InternalComponent.TimeValue = SumOfBestValue;
 

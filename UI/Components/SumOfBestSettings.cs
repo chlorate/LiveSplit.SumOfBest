@@ -8,6 +8,7 @@ namespace LiveSplit.UI.Components
 {
     public partial class SumOfBestSettings : UserControl
     {
+        public string OverrideText { get; set; }
         public Color TextColor { get; set; }
         public bool OverrideTextColor { get; set; }
         public Color TimeColor { get; set; }
@@ -31,6 +32,7 @@ namespace LiveSplit.UI.Components
         {
             InitializeComponent();
 
+            OverrideText = "";
             TextColor = Color.FromArgb(255, 255, 255);
             OverrideTextColor = false;
             TimeColor = Color.FromArgb(255, 255, 255);
@@ -41,6 +43,7 @@ namespace LiveSplit.UI.Components
             BackgroundGradient = GradientType.Plain;
             Display2Rows = false;
 
+            txtOverrideText.DataBindings.Add("Text", this, "OverrideText");
             chkOverrideTextColor.DataBindings.Add("Checked", this, "OverrideTextColor", false, DataSourceUpdateMode.OnPropertyChanged);
             btnTextColor.DataBindings.Add("BackColor", this, "TextColor", false, DataSourceUpdateMode.OnPropertyChanged);
             chkOverrideTimeColor.DataBindings.Add("Checked", this, "OverrideTimeColor", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -112,6 +115,7 @@ namespace LiveSplit.UI.Components
         public void SetSettings(XmlNode node)
         {
             var element = (XmlElement)node;
+            OverrideText = SettingsHelper.ParseString(element["OverrideText"]);
             TextColor = SettingsHelper.ParseColor(element["TextColor"]);
             OverrideTextColor = SettingsHelper.ParseBool(element["OverrideTextColor"]);
             TimeColor = SettingsHelper.ParseColor(element["TimeColor"]);
@@ -138,6 +142,7 @@ namespace LiveSplit.UI.Components
         private int CreateSettingsNode(XmlDocument document, XmlElement parent)
         {
             return SettingsHelper.CreateSetting(document, parent, "Version", "1.4") ^
+            SettingsHelper.CreateSetting(document, parent, "OverrideText", OverrideText) ^
             SettingsHelper.CreateSetting(document, parent, "TextColor", TextColor) ^
             SettingsHelper.CreateSetting(document, parent, "OverrideTextColor", OverrideTextColor) ^
             SettingsHelper.CreateSetting(document, parent, "TimeColor", TimeColor) ^
