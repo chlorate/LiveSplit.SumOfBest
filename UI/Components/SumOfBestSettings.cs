@@ -43,7 +43,7 @@ namespace LiveSplit.UI.Components
             BackgroundGradient = GradientType.Plain;
             Display2Rows = false;
 
-            txtOverrideText.DataBindings.Add("Text", this, "OverrideText");
+            cmbOverrideText.DataBindings.Add("Text", this, "OverrideText");
             chkOverrideTextColor.DataBindings.Add("Checked", this, "OverrideTextColor", false, DataSourceUpdateMode.OnPropertyChanged);
             btnTextColor.DataBindings.Add("BackColor", this, "TextColor", false, DataSourceUpdateMode.OnPropertyChanged);
             chkOverrideTimeColor.DataBindings.Add("Checked", this, "OverrideTimeColor", false, DataSourceUpdateMode.OnPropertyChanged);

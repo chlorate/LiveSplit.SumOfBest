@@ -37,7 +37,6 @@
             this.chkOverrideTextColor = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtOverrideText = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -55,6 +54,7 @@
             this.btnColor1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.chkTwoRows = new System.Windows.Forms.CheckBox();
+            this.cmbOverrideText = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -112,7 +112,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
             this.tableLayoutPanel2.Controls.Add(this.groupBox5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtOverrideText, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cmbOverrideText, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -196,14 +196,6 @@
             this.label3.Size = new System.Drawing.Size(147, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Override Text:";
-            // 
-            // txtOverrideText
-            // 
-            this.txtOverrideText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOverrideText.Location = new System.Drawing.Point(156, 4);
-            this.txtOverrideText.Name = "txtOverrideText";
-            this.txtOverrideText.Size = new System.Drawing.Size(291, 20);
-            this.txtOverrideText.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -429,6 +421,19 @@
             this.chkTwoRows.Text = "Display 2 Rows";
             this.chkTwoRows.UseVisualStyleBackColor = true;
             // 
+            // cmbOverrideText
+            // 
+            this.cmbOverrideText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbOverrideText.FormattingEnabled = true;
+            this.cmbOverrideText.Items.AddRange(new object[] {
+            "",
+            "Sum of Best",
+            "SoB"});
+            this.cmbOverrideText.Location = new System.Drawing.Point(156, 4);
+            this.cmbOverrideText.Name = "cmbOverrideText";
+            this.cmbOverrideText.Size = new System.Drawing.Size(291, 21);
+            this.cmbOverrideText.TabIndex = 0;
+            // 
             // SumOfBestSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +491,6 @@
         private System.Windows.Forms.CheckBox chkOverrideTextColor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtOverrideText;
+        private System.Windows.Forms.ComboBox cmbOverrideText;
     }
 }
