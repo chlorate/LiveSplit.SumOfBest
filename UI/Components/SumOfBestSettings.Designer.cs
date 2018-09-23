@@ -37,6 +37,7 @@
             this.chkOverrideTextColor = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbOverrideText = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -54,7 +55,6 @@
             this.btnColor1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.chkTwoRows = new System.Windows.Forms.CheckBox();
-            this.cmbOverrideText = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -196,6 +196,19 @@
             this.label3.Size = new System.Drawing.Size(147, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Override Text:";
+            // 
+            // cmbOverrideText
+            // 
+            this.cmbOverrideText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbOverrideText.FormattingEnabled = true;
+            this.cmbOverrideText.Items.AddRange(new object[] {
+            "Sum of Best Segments",
+            "Sum of Best",
+            "SoB"});
+            this.cmbOverrideText.Location = new System.Drawing.Point(156, 4);
+            this.cmbOverrideText.Name = "cmbOverrideText";
+            this.cmbOverrideText.Size = new System.Drawing.Size(291, 21);
+            this.cmbOverrideText.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -420,19 +433,6 @@
             this.chkTwoRows.TabIndex = 3;
             this.chkTwoRows.Text = "Display 2 Rows";
             this.chkTwoRows.UseVisualStyleBackColor = true;
-            // 
-            // cmbOverrideText
-            // 
-            this.cmbOverrideText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbOverrideText.FormattingEnabled = true;
-            this.cmbOverrideText.Items.AddRange(new object[] {
-            "",
-            "Sum of Best",
-            "SoB"});
-            this.cmbOverrideText.Location = new System.Drawing.Point(156, 4);
-            this.cmbOverrideText.Name = "cmbOverrideText";
-            this.cmbOverrideText.Size = new System.Drawing.Size(291, 21);
-            this.cmbOverrideText.TabIndex = 0;
             // 
             // SumOfBestSettings
             // 
